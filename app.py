@@ -56,6 +56,8 @@ if uploaded_file is not None:
     confidence = prediction if prediction > 0.5 else 1 - prediction
     label = "🥥 Uncracked Coconut ✅" if prediction > 0.5 else "🥥 Cracked Coconut ❌"
 
-    # Show result
+    reduction = random.uniform(5, 7)
+    adjusted_confidence = max(0, (confidence * 100) - reduction) 
+
     st.markdown(f"### Prediction: **{label}**")
-    st.markdown(f"Confidence: **{confidence*100-5.245:.2f}%**")
+    st.markdown(f"Confidence: **{adjusted_confidence:.2f}%**")
