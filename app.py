@@ -3,6 +3,8 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
+import random
+
 
 # Load trained model with custom objects
 MODEL_PATH = "coconut_model_fixed.h5"
